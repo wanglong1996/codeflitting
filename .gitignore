@@ -1,6 +1,7 @@
 # PyCharm files
 .idea
-
+db.sqlite3
+blog/migrations/0*_initial.py
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
