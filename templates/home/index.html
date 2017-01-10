@@ -1,0 +1,35 @@
+{% load staticfiles %}
+{% load compress %}
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="大数据,Hadoop,hdfs,yarn,MapReduce,spark,pig,scala,algorithm,等"/>
+    <meta name="description" content="一个码农的自言自语"/>
+    <title>代码搬运工</title>
+    <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    {% compress css %}
+        <link href="{% static 'home/css/style.scss' %}" type="text/x-scss" rel="stylesheet"/>
+    {% endcompress %}
+</head>
+<body>
+<div class="home_container">
+    <img class="avatar" src="{% static '/home/images/py.jpg' %}" alt="" width="200" height="200">
+    <h1>PY</h1>
+    <p>
+        <i class="fa fa-location-arrow fa-lg" aria-hidden="true"></i>
+        &nbsp;&nbsp;&nbsp;BeiJing · China
+    </p>
+    <p>
+        <i class="fa fa-id-card fa-lg" aria-hidden="true"></i>
+        &nbsp;&nbsp;&nbsp;Focus on: Hadoop, Spark, Pig, Algorithm
+    </p>
+    <p class="nav">
+        <a href="/"> Home </a>
+        <a href="/blog"> Blog </a>
+        <a href="/report"> Report </a>
+    </p>
+</div>
+</body>
+</html>
