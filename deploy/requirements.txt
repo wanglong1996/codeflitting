@@ -2,3 +2,4 @@ django==1.10.5
 pytz==2016.10
 django_compressor==2.1
 django-libsass==0.7
+django-hosts==2.0
