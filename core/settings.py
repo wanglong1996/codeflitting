@@ -137,5 +137,6 @@ COMPRESS_PRECOMPILERS = (
 
 # django-hosts config
 
+PARENT_HOST = 'mysite.com'
 ROOT_HOSTCONF = 'core.hosts'
 DEFAULT_HOST = 'www'

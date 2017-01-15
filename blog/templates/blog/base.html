@@ -3,12 +3,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}default{% endblock %}</title>
-    {% block js %}{% endblock %}
+    {% block title %}{% endblock %}
     {% block css %}{% endblock %}
+    {% block js %}{% endblock %}
 </head>
 <body>
-{% block content %}
+{% block container %}
     test
 {% endblock %}
 </body>

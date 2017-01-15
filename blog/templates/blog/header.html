@@ -1,1 +1,11 @@
 {% load static %}
+{% load hosts %}
+<div class="header">
+    <div class="site-name">
+        <a class="logo alert-link" href="{% host_url 'index' host 'blog' %}">code<span>flitting</span></a>
+    </div>
+    <div class="nav-menu">
+        <a href="#">Algorithm</a>
+        <a href="#" class="selected active current">Hadoop</a>
+    </div>
+</div>
