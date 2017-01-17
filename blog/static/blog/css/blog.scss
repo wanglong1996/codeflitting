@@ -88,4 +88,44 @@ body {
   }
 }
 
+.article {
+  .row {
+    margin-right: 0px;
+    margin-left: 0px;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    border-color: #000;
+    background-color: #ffffff;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.298039);
+    transition-duration: 0.5s;
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+
+    .article_title {
+      text-align: left;
+      a {
+        color: #025aa5;
+      }
+    }
+    .article_tag {
+      text-align: right;
+      span:hover {
+        background-color: #0275d8;
+      }
+    }
+  }
+  .row:hover {
+    box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.298039);
+    background-color: #f1f1f1;
+    a {
+      color: #0089ff;
+      text-decoration: none;
+    }
+  }
+  .row:focus .row:active {
+    outline: 0 !important;
+    box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.298039);
+  }
+}
 

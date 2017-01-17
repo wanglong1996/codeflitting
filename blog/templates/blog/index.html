@@ -20,30 +20,23 @@
     <div class="container">
         {% include 'blog/header.html' %}
         <br>
-        <div class="row">
-            <div class="col">
-                <div class="list-group">
-                    <a href="#" class="list-group-item list-group-item-action">
-                        Dapibus ac facilisis in
-                        <span class="badge badge-default badge-pill">14</span>
-                        >>
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action">Morbi leo risus >></a>
-                    <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac >></a>
-                    <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-                    <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-                    <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-                    <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-                    <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-                    <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-                    <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-                    <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-                    <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-                    <a href="#" class="list-group-item list-group-item-action disabled">Vestibulum at eros</a>
+        <div class="article">
+
+            {% for article in article_list %}
+                <div class="row">
+                    <div class="article_title col-7">
+                        <i class="fa fa-calendar" aria-hidden="true"> {{ article.created_time }}&nbsp;&nbsp;>>&nbsp;</i>
+                        <a href="">{{ article.title }}</a>
+                    </div>
+                    <div class="article_tag col-5">
+                        {% for tag in article.tags.all %}
+                            <a href="{% host_url 'tag' tag.id host 'blog' %}"> <span
+                                    class="badge badge-default badge-pill">{{ tag }}</span></a>
+                        {% endfor %}
+                    </div>
                 </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
     {% include 'blog/footer.html' %}
-    {#    {{ block.super }}#}
 {% endblock %}
