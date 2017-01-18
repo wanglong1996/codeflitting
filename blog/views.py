@@ -2,7 +2,7 @@
 # import sys
 # from django.conf import settings
 from django.shortcuts import get_object_or_404
-from django.views.generic import ListView
+from django.views.generic import ListView, TemplateView
 from django.views.generic.detail import DetailView
 
 from blog.models import Article, Category
@@ -32,3 +32,7 @@ class IndexView(ListView):
 
 class ArticleDetailView(DetailView):
     pass
+
+
+class MarkdownView(TemplateView):
+    template_name = "blog/markdown.html"
