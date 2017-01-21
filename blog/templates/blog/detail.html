@@ -1,0 +1,36 @@
+{% extends 'blog/base.html' %}
+{% load compress %}
+{% load static %}
+{% load hosts %}
+
+
+{% block css %}
+    {{ block.super }}
+    <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+    {% compress css %}
+        <link href="{% static 'blog/css/blog.scss' %}" type="text/x-scss" rel="stylesheet"/>
+    {% endcompress %}
+{% endblock %}
+{% block js %}
+    {{ block.super }}
+{% endblock %}
+{% block content %}
+    <div class="container article_detail">
+        <div class="article_title container">
+            <h5>{{ article.title }}</h5>
+        </div>
+        <div class="article_info">
+            <a>
+                <i class="fa fa-calendar-minus-o" aria-hidden="true"> </i>{{ article.created_time }}
+            </a>
+            <a href="{% host_url 'category' article.category.id host 'blog' %}">
+                <i class="fa fa-folder-o" aria-hidden="true"> </i>{{ article.category }}
+            </a>
+        </div>
+        <div class="article_content">
+            {{ article.body }}
+        </div>
+    </div>
+    {% include 'blog/footer.html' %}
+{% endblock %}

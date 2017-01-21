@@ -31,7 +31,15 @@ class IndexView(ListView):
 
 
 class ArticleDetailView(DetailView):
-    pass
+    model = Article
+    template_name = "blog/detail.html"
+    context_object_name = "article"
+    pk_url_kwarg = 'article_id'
+
+    def get_object(self, queryset=None):
+        article = super(ArticleDetailView, self).get_object()
+        article.created_time = article.created_time.strftime('%Y-%m-%d')
+        return article
 
 
 class MarkdownView(TemplateView):

@@ -16,18 +16,18 @@
     {% endcompress %}
 {% endblock %}
 
-{% block container %}
+{% block content %}
     <div class="container">
         {% include 'blog/header.html' %}
         <br>
-        <div class="article">
+        <div class="article_list">
             {% for article in article_list %}
                 <div class="row">
-                    <div class="article_title col-7">
-                        <i class="fa fa-calendar" aria-hidden="true"> {{ article.created_time }}&nbsp;&nbsp;>>&nbsp;</i>
-                        <a href="">{{ article.title }}</a>
+                    <div class="col-7 article_title">
+                        <i class="fa fa-calendar" aria-hidden="true"> &nbsp;&nbsp;{{ article.created_time }}&nbsp;&nbsp;&nbsp;>>&nbsp;&nbsp;</i>
+                        <a href="{% host_url 'article' article.id host 'blog' %}">{{ article.title }}</a>
                     </div>
-                    <div class="article_tag col-5">
+                    <div class="col-5 article_tag">
                         {% for tag in article.tags.all %}
                             <a href="{% host_url 'tag' tag.id host 'blog' %}"> <span
                                     class="badge badge-default badge-pill">{{ tag }}</span></a>
