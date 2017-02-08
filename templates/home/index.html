@@ -1,5 +1,6 @@
 {% load static %}
 {% load compress %}
+{% load hosts %}
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
@@ -26,9 +27,9 @@
         &nbsp;&nbsp;&nbsp;Focus on: Hadoop, Spark, Pig, Algorithm
     </p>
     <p class="nav">
-        <a href="/"> Home </a>
-        <a href="/blog"> Blog </a>
-        <a href="/report"> Report </a>
+        <a href="{% host_url 'index' host 'www' %}"> Home </a>
+        <a href="{% host_url 'index' host 'blog' %}"> Blog </a>
+        {#        <a href="{% host_url 'index' host 'report' %}"> Report </a>#}
     </p>
 </div>
 </body>
