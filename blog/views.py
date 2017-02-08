@@ -1,8 +1,5 @@
 # --coding:utf-8--
-# import sys
-# from django.conf import settings
-from django.shortcuts import get_object_or_404
-from django.views.generic import ListView, TemplateView
+from django.views.generic import ListView
 from django.views.generic.detail import DetailView
 
 from blog.models import Article, Category
@@ -21,7 +18,7 @@ class IndexView(ListView):
             article_list = Article.objects.filter(status='p')
 
         for article in article_list:
-            article.created_time = article.created_time.strftime('%Y-%m-%d')
+            article.created_time = article.created_time.strftime('%d %B %Y')
         return article_list
 
     def get_context_data(self, **kwargs):
@@ -40,7 +37,3 @@ class ArticleDetailView(DetailView):
         article = super(ArticleDetailView, self).get_object()
         article.created_time = article.created_time.strftime('%Y-%m-%d')
         return article
-
-
-class MarkdownView(TemplateView):
-    template_name = "blog/markdown.html"

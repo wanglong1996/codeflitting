@@ -8,7 +8,7 @@
     <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="//cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
     {% compress css %}
-        <link href="{% static "blog/markdown/syntaxhighlighting.css" %}" rel="stylesheet">
+        <link href="{% static "blog/css/syntaxhighlighting.css" %}" rel="stylesheet">
         <link href="{% static 'blog/css/blog.scss' %}" type="text/x-scss" rel="stylesheet"/>
     {% endcompress %}
 {% endblock %}
@@ -39,10 +39,14 @@
 {% block extra_js %}
     <script converter="markdown-render" type="text/plain">
 {{ article.body|safe }}
+
+
+
+
     </script>
     <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
-    <script src="{% static "blog/markdown/plugins.js" %}"></script>
-    <script src="{% static "blog/markdown/highlight.js" %}"></script>
-    <script src="{% static "blog/markdown/marked.js" %}"></script>
+    <script src="{% static "blog/js/plugins.js" %}"></script>
+    <script src="{% static "blog/js/highlight.js" %}"></script>
+    <script src="{% static "blog/js/marked.js" %}"></script>
     <script src="{% static "blog/js/Converter.js" %}"></script>
 {% endblock %}
