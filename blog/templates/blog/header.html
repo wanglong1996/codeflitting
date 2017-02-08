@@ -1,0 +1,16 @@
+{% load hosts %}
+<header>
+    <div class="site-name">
+        <a class="logo alert-link" href="{% host_url 'index' host 'blog' %}">code<span>flitting</span></a>
+    </div>
+    <div class="nav-menu">
+        {% for category in category_list %}
+            {% if category_active == category.id %}
+                <a class="selected active current"
+                   href="{% host_url 'category' category.id host 'blog' %}">{{ category.name }}</a>
+            {% else %}
+                <a href="{% host_url 'category' category.id host 'blog' %}">{{ category.name }}</a>
+            {% endif %}
+        {% endfor %}
+    </div>
+</header>
