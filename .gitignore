@@ -1,6 +1,7 @@
 # PyCharm files
 .idea
 db.sqlite3
+collectstatic/CACHE/*
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
