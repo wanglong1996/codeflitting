@@ -1,0 +1,67 @@
+/*
+ * Home page style
+ */
+/* line 5, static/home/css/style.scss */
+* {
+  margin: 0;
+  padding: 0; }
+
+/* line 10, static/home/css/style.scss */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  color: #535353;
+  overflow: hidden; }
+
+/* line 17, static/home/css/style.scss */
+.home_container {
+  text-align: center;
+  margin: 100px auto auto auto;
+  max-width: 500px;
+  padding: 0 20px; }
+  /* line 23, static/home/css/style.scss */
+  .home_container p {
+    height: 24px;
+    line-height: 24px;
+    margin: 15px 0; }
+  /* line 28, static/home/css/style.scss */
+  .home_container h1 {
+    font-size: 26px;
+    color: #424242;
+    margin-bottom: 20px; }
+  /* line 34, static/home/css/style.scss */
+  .home_container a {
+    color: #535353;
+    text-decoration: underline; }
+    /* line 37, static/home/css/style.scss */
+    .home_container a:link .home_container a:visited {
+      color: #535353;
+      text-decoration: underline; }
+  /* line 43, static/home/css/style.scss */
+  .home_container .avatar {
+    margin-bottom: 35px;
+    border-radius: 100px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); }
+  /* line 49, static/home/css/style.scss */
+  .home_container .nav a {
+    padding: 0 6px 0 6px; }
+
+@keyframes fade-in {
+  0% {
+    opacity: 0; }
+  40% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0; }
+  40% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+  /* line 77, static/home/css/style.scss */
+  .home_container .willerce {
+    animation: fade-in;
+    animation-duration: 1s;
+    -webkit-animation: fade-in 1s; }
