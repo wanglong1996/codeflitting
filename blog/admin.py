@@ -1,7 +1,8 @@
 # Register your models here.
 from django.contrib import admin
-
 from models import Article, Category, Tag
+from pagedown.widgets import AdminPagedownWidget
+from django.db import models
 
 
 class ArticleAdmin(admin.ModelAdmin):
@@ -17,6 +18,9 @@ class ArticleAdmin(admin.ModelAdmin):
     search_fields = ['title']
     ordering = ['title']
     actions = [make_published]
+    formfield_overrides = {
+        models.TextField: {'widget': AdminPagedownWidget},
+    }
 
 
 class CategoryAdmin(admin.ModelAdmin):
