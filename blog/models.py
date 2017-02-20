@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import unicode_literals
-
 import sys
-
-from django.core.urlresolvers import reverse
+from django_hosts.resolvers import reverse
 from django.db import models
 
 reload(sys)
@@ -36,7 +34,7 @@ class Article(BaseModel):
     tags = models.ManyToManyField('Tag', verbose_name='标签', blank=True)
 
     def get_absolute_url(self):
-        return reverse('blog:article', args=[self.id])
+        return reverse('article', args=[self.id], host='blog')
 
     def __unicode__(self):
         return self.title
@@ -50,7 +48,7 @@ class Category(BaseModel):
     order = models.PositiveIntegerField('顺序', default=0)
 
     def get_absolute_url(self):
-        return reverse('blog:category', args=[self.id])
+        return reverse('category', args=[self.id], host='blog')
 
     def __unicode__(self):
         return self.name
@@ -60,7 +58,7 @@ class Tag(BaseModel):
     name = models.CharField('标签名', max_length=20)
 
     def get_absolute_url(self):
-        return reverse('blog:tag', args=[self.id])
+        return reverse('tag', args=[self.id], host='blog')
 
     def __unicode__(self):
         return self.name

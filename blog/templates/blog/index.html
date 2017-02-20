@@ -23,14 +23,15 @@
         <div class="article_list">
             {% for article in article_list %}
                 <div class="row">
-                    <div class="col-7 article_title">
+                    <div class="col-8 article_title">
                         <i class="fa fa-calendar" aria-hidden="true"> &nbsp;&nbsp;{{ article.created_time }}&nbsp;&nbsp;&nbsp;>>&nbsp;&nbsp;</i>
                         <a href="{% host_url 'article' article.id host 'blog' %}">{{ article.title }}</a>
                     </div>
-                    <div class="col-5 article_tag">
+                    <div class="col-4 article_tag">
                         {% for tag in article.tags.all %}
-                            <a href="{% host_url 'tag' tag.id host 'blog' %}"> <span
-                                    class="badge badge-default badge-pill">{{ tag }}</span></a>
+                            <a href="{% host_url 'tag' tag.id host 'blog' %}">
+                                <span class="badge badge-default badge-pill">{{ tag }}</span>
+                            </a>
                         {% endfor %}
                     </div>
                 </div>
