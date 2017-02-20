@@ -18,6 +18,8 @@
 {% endblock %}
 
 {% block title %}
+    <meta name="keywords" content="{% for tag in article.tags.all %}{{ tag.name }},{% endfor %}{{ article.category }}"/>
+
     <title>{{ article.title }}</title>
 {% endblock %}
 
