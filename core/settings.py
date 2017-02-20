@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_hosts',
     'compressor',
+    'pagedown',
     'blog',
 ]
 
